@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE VAULT | مطعم النخبة</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,400&family=Noto+Sans+Arabic:wght@100;400;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: #050505;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .serif-font { font-family: 'Cormorant Garamond', serif; }
+
+        /* تأثير ظهور الصور عند السكرول */
+        .reveal-frame {
+            overflow: hidden;
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .reveal-frame.active { clip-path: inset(0 0 0 0); }
+
+        .menu-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.5s ease;
+        }
+        .menu-item:hover {
+            padding-right: 20px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* منع أي دوائر ذهبية أو ماوس غريب */
+        * { cursor: auto !important; }
+        a, button { cursor: pointer !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-[100] p-10 flex justify-between items-center mix-blend-difference">
+        <div class="serif-font text-3xl font-light tracking-[8px]">VAULT</div>
+        <div class="flex gap-10 text-[10px] font-bold uppercase tracking-[4px]">
+            <a href="#starters">المقبلات</a>
+            <a href="#main">الأطباق الرئيسية</a>
+            <a href="#desserts">الحلويات</a>
+            <a href="#reserve" class="text-[#b89150]">حجز طاولة</a>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center justify-center relative">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2074" class="absolute inset-0 w-full h-full object-cover opacity-40 brightness-50">
+        <div class="relative text-center">
+            <h1 class="serif-font text-[10vw] leading-none mb-4 italic">The Art of <br> Fine Dining</h1>
+            <p class="text-white/30 tracking-[10px] uppercase text-xs">تجربة لا تُنسى.. بـ 10,000 جنيه للطبق</p>
+        </div>
+    </section>
+
+    <section id="starters" class="py-32 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="reveal-frame">
+                <img src="https://images.unsplash.com/photo-1546241072-48010ad2862c?q=80&w=1974" class="w-full h-[600px] object-cover rounded-2xl" alt="Starter">
+            </div>
+            <div>
+                <h2 class="serif-font text-6xl italic mb-12 text-[#b89150]">المقبلات الباردة</h2>
+                <div class="space-y-8">
+                    <div class="menu-item py-6 flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xl font-bold">كافيار "بيلوجا" ملكي</h4>
+                            <p class="text-white/40 text-sm mt-2">يُقدم مع ملعقة من الصدف وقطع خبز الذهب.</p>
+                        </div>
+                        <span class="serif-font text-2xl text-[#b89150]">2,400 EGP</span>
+                    </div>
+                    <div class="menu-item py-6 flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xl font-bold">تارتار التونة مع الترافل</h4>
+                            <p class="text-white/40 text-sm mt-2">تونا زرقاء الزعانف مستوردة من اليابان.</p>
+                        </div>
+                        <span class="serif-font text-2xl text-[#b89150]">1,850 EGP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main" class="py-32 bg-[#050505] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="serif-font text-8xl text-center mb-20 italic">الأطباق الرئيسية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="group">
+                    <div class="reveal-frame mb-8 h-[450px]">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">ستيك واغيو A5</h3>
+                    <p class="text-white/30 text-sm mb-4 leading-relaxed">أندر أنواع اللحوم في العالم مع صوص الفوا جرا.</p>
+                    <span class="price-tag text-[#b89150] font-bold">11,200 EGP</span>
+                </div>
+                <div class="group">
+                    <div class="reveal-frame mb-8 h-[450px]">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">سلمون بري بصوص الكافيار</h3>
+                    <p class="text-white/30 text-sm mb-4 leading-relaxed">مطبوخ بتقنية السو-فيد لمدة 6 ساعات.</p>
+                    <span class="price-tag text-[#b89150] font-bold">8,400 EGP</span>
+                </div>
+                <div class="group">
+                    <div class="reveal-frame mb-8 h-[450px]">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2074" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">ريزوتو الفطر الملكي</h3>
+                    <p class="text-white/30 text-sm mb-4 leading-relaxed">أرز إيطالي مع أغلى أنواع الفطر في أوروبا.</p>
+                    <span class="price-tag text-[#b89150] font-bold">6,900 EGP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desserts" class="py-32 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="serif-font text-6xl italic mb-12 text-[#b89150]">نهايات مخملية</h2>
+                <div class="menu-item py-8 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-xl font-bold">سيمفونية الشوكولاتة السوداء</h4>
+                        <p class="text-white/40 text-sm mt-2">شوكولاتة سويسرية خام مع رقائق الذهب عيار 24.</p>
+                    </div>
+                    <span class="serif-font text-2xl text-[#b89150]">3,200 EGP</span>
+                </div>
+                <div class="menu-item py-8 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-xl font-bold">كريم بروليه بالزعفران</h4>
+                        <p class="text-white/40 text-sm mt-2">معد بأغلى أنواع الزعفران الإيراني.</p>
+                    </div>
+                    <span class="serif-font text-2xl text-[#b89150]">1,500 EGP</span>
+                </div>
+            </div>
+            <div class="reveal-frame order-1 md:order-2">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964" class="w-full h-[600px] object-cover rounded-2xl" alt="Dessert">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <h2 class="serif-font text-4xl mb-6 tracking-[10px]">VAULT</h2>
+        <p class="text-white/20 text-[10px] font-bold uppercase tracking-[5px]">Strictly Private. Strictly Fine.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // تفعيل كشف الصور عند السكرول
+        document.querySelectorAll('.reveal-frame').forEach(frame => {
+            ScrollTrigger.create({
+                trigger: frame,
+                start: "top 80%",
+                onEnter: () => frame.classList.add('active')
+            });
+        });
+
+        // حركة Parallax خفيفة للعناوين
+        gsap.to(".serif-font", {
+            scrollTrigger: {
+                scrub: true
+            },
+            y: -50
+        });
+    </script>
+</body>
+</html>
